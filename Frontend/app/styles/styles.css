@@ -1,0 +1,155 @@
+
+.divider {
+  margin: 20px 0px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai');
+
+.sliderBox {
+	float: left;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-right: 50px;
+}
+
+.containerRight {
+
+  margin-left: 50px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.form-inline {
+    float: left;
+    float: bottom;
+    height: 50px;
+    width: 1200px;
+    padding-left: 40px;
+
+
+}
+
+.GetawayTitle {
+	 font-family: 'Arima Madurai', cursive;
+	 font-weight: bold;
+	 padding-left: 40px;
+	 color: #5A7D7C;
+}
+
+
+.thumbnail{
+     flex: 0 0 100px;
+     flex-direction: row;
+     padding: 0;
+     margin: 0;
+/*    display: flex;*/
+}
+
+
+/*Photo slider */
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+body { margin: 0; }
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 20s slidy infinite;
+}
+
+
+.padding-buffer {
+    padding: 20px;
+}
+
+.table-font {
+    font-size: 16px;
+}
+
+.main-text {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    min-height: 70px;
+    max-height: 70px;
+}
+
+.no-border {
+    border: 0;
+}
+
+.padding-right {
+    padding-right: 10px;
+}
+
+.padding-left {
+    padding-left: 20px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.margin-left {
+    margin-left: 20px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.img-container {
+min-height:220px;
+max-height: 220px;
+}
+
+
+.background-color {
+    background-color: #F1F4F5;
+}
+
+.profile-pic {
+    height: auto;
+    max-height: 250px;
+    width: auto;
+    max-width: 300px;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 250px;
+    min-width: 300px;
+}
+
+.margin-top {
+    margin-top: 20px;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="text-center GetawayTitle">Your Favorites</h2>
+  <hr/>
+</div>
+<div class="container divider" ng-init="sc.getFavorites()">
+  <div class="row">
+  <div ng-repeat='f in sc.userFavs'>
+      <!-- <p> <img ng-src="{{data.pictureUrl}}" height="62" width="100"> </p> -->
+          <div class="col-sm-6 col-md-4">
+              <div class="thumbnail shadow">
+                  <img class="search-pic" ng-src="{{f.room.pictureUrl}}">
+                  <div class="caption">
+                      <h4>{{ f.room.roomName }} </h4>
+                      <p>${{ f.room.price }} /night </p>
+                      <!-- roomDetailDisplay passed in the state in ap.js -->
+                      <p> <a class="btn btn-color" role="button" ng-click="sc.storeRoomId(f.room.roomId)">More Details</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>

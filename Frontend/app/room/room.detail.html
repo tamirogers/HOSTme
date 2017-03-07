@@ -1,0 +1,45 @@
+<body id="image">
+
+<div class="container">
+    <table id="searchResults" class="table">
+
+<!--     RoomController  -->
+        <h3 class="GetawayTitle"> {{ rc.room.roomName }} </h3>
+        <img class="shadow" ng-src="{{rc.room.pictureUrl}}">
+        <tr>
+
+            <th>Price:</th>
+            <th>Number of bedrooms:</th>
+            <th>Guest Limit:</th>
+            <th>Address </th>
+            <th>City:</th>
+            <th>State:</th>
+
+        </tr>
+        <td width="7%"> ${{rc.room.price}}</td>
+        <td width="12%"> {{rc.room.roomNumber}}</td>
+        <td width="7%"> {{rc.room.guestLimit}}</td>
+        <td width="20%"> {{rc.room.address}}</td>
+        <td width="17%"> {{rc.room.city}}</td>
+        <td width="5%"> {{rc.room.state}}</td>
+        </tr>
+    </table>
+    <h4> Property &#38 Host Description</h4>
+    <p>{{rc.room.description}}</p>
+    <div class="form-group">
+    <button type="button" class="btn btn-color" ng-click="editing = !editing">Message Owner</button>
+    </div>
+    <div ng-show="editing" ng-hide="!editing">
+      <div class="from-group">
+      <label>Subject:</label>
+      <input class="form-control" type="text" ng-model="rc.subject">
+      </div>
+      <label> Your Message</label>
+
+    <textarea class="form-control" rows="5" ng-model="rc.body"></textarea>
+
+    <button type="button" class="btn btn-color" ng-click="rc.sendMessage(rc.room.userId)"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send</button>
+
+    </div>
+</div>
+</div></div></body>

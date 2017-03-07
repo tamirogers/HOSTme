@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HostMe</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/app/styles/styles.adam.css">
+    <link rel="stylesheet" href="/app/styles/styles.css">
+    <!-- endinject -->
+</head>
+
+<body>
+  <div ng-include="'app/partials/nav.full.html'" ng-controller="NavController"></div>
+    <!-- Views Injected -->
+    <div ui-view></div>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="bower_components/ngSweetAlert/SweetAlert.js"></script>
+    <script src="bower_components/satellizer/dist/satellizer.js"></script>
+    <script src="bower_components/filepicker-js/filepicker.min.js"></script>
+    <script src="bower_components/angular-filepicker/dist/angular_filepicker.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/core/localStorageFactory.js"></script>
+    <script src="/app/messages/message.controller.js"></script>
+    <script src="/app/messages/message.factory.js"></script>
+    <script src="/app/partials/nav.controller.js"></script>
+    <script src="/app/room/room.controller.js"></script>
+    <script src="/app/room/room.factory.js"></script>
+    <script src="/app/search/search.controller.js"></script>
+    <script src="/app/search/search.factory.js"></script>
+    <script src="/app/user/user.controller.js"></script>
+    <script src="/app/user/user.factory.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/node_modules/angularjs-social-login/angularjs-social-login.js"></script>
+    <!-- endinject -->
+    <!-- <script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/JavaScript" language="JavaScript">$(document).ready(function(){
+      $('.carousel').carousel()
+    })</script> -->
+</body>
+
+</html>

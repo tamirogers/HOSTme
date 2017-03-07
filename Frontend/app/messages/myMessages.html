@@ -1,0 +1,63 @@
+<div class="container">
+  <h2 class="text-center GetawayTitle">Your Messages</h2>
+  <hr/>
+  <div>
+      <ul class="nav nav-tabs">
+        <li ><a href="" ng-click="sent = false">Received</a></li>
+        <li><a href="" ng-click="sent = true">Sent</a></li>
+      </ul>
+  </div> <!--close tabs div -->
+  <div class="panel panel-info" ng-repeat="c in mc.receivedConvos" ng-show="!sent">
+    <h4 class="text-center">Conversation with {{c.sender}}</h4>
+        <div class="panel-body"><!-- main conversation div -->
+            <div class="col-md-2 message-table"><!-- img div -->
+                <img class="img-rounded" ng-src={{c.senderPic}} height= "150" width = "150" alt="">
+            </div><!-- close img div -->
+            <div class="col-md-10 message-table">
+              <div class="table-responsive">
+                  <table class="table table-striped" >
+                    <thead>
+                      <th>Sender</th>
+                      <th>Date</th>
+                      <th>Subject</th>
+                    </thead>
+                    <tr ng-repeat="m in c.conversation | orderBy: '-dateCreated'">
+                      <td><a ng-click="show = !show">{{c.sender}}</a></td>
+                      <td>{{m.dateCreated | date}}</td>
+                      <td>{{m.subject}}</td>
+                      <td ng-show="show" >{{m.body}}</td>
+                      <td><textarea  cols="10" rows="2" ng-model="mc.body" ng-show="show"></textarea></td>
+                      <td ng-show="show"><button class="btn btn-color" ng-click="mc.replyMessage(m, c)">Reply</button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+            </div><!-- message-table div -->
+       </div>
+  </div> <!--close receive div -->
+  <div class="panel panel-info" ng-repeat="c in mc.sentConvos" ng-show="sent"><!-- open sent div -->
+    <h4 class="text-center">Conversation with {{c.receiver}}</h4>
+        <div class="panel-body">
+            <div class="col-md-2 message-table">
+                <img class="img-rounded" ng-src={{c.receiverPic}} height= "150" width = "150" alt="">
+            </div>
+            <div class="col-md-10 message-table">
+                <table class="table table-striped">
+                  <thead>
+                    <th>Subject</th>
+                    <th>Body</th>
+                    <th>Date</th>
+                  </thead>
+                  <tr ng-repeat="m in c.conversation | orderBy: '-dateCreated'">
+                    <div>
+                      <td>{{m.subject}}</td>
+                      <td >{{m.body}}</td>
+                      <td>{{m.dateCreated | date}}</td>
+                      </td>
+                    </div>
+                  </tr>
+                </table>
+            </div>
+       </div>
+  </div> <!--close sent div -->
+</div>

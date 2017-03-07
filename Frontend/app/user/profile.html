@@ -1,0 +1,141 @@
+<!-- fires viewUser function on page load -->
+<div data-ng-init="uc.viewUser()">
+    <div class="container">
+        <!-- Profile Panel -start div 4 columns -->
+        <!--  <div class="row"> -->
+        <div name="profile" class="col-xs-12">
+            <div class="panel panel-info-fluid col-xs-12">
+                <div class="panel-header-fluid">
+                    <h2 >Hello, I'm {{uc.user.firstName}}!</h2>
+                    <div class="col-xs-6 col-md-5 col-lg-4 margin-top">
+                        <div class="shadow" style="display: flex; justify-content: center;">
+                            <img alt="User Pic" ng-src="{{uc.user.profilePic}}" ng-model="uc.user.profilePic" class="img-responsive profile-pic">
+                            </img>
+                        </div>
+                        <div class="margin-top">
+                            <a href="" class="center-text margin-top" ng-click="uc.pickFile(); editPic = !editPic"><i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i>Update Photo</a>
+                        </div>
+                        <a href="" ng-show="editPic" ng-click="uc.updateUserPhoto(uc.user)"><i class="fa fa-floppy-o fa-lg padding-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-7 col-sm-6">
+                        <table class="table table-user-information">
+                            <tbody class="table table-font">
+                                <tr>
+                                    <td>First Name:</td>
+                                    <td ng-hide="editing">{{uc.user.firstName}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="text" ng-model="uc.user.firstName"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name:</td>
+                                    <td ng-hide="editing">{{uc.user.lastName}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="text" ng-model="uc.user.lastName"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>User Name:</td>
+                                    <td ng-hide="editing">{{uc.user.userName}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="text" ng-model="uc.user.userName"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth:</td>
+                                    <td ng-hide="editing">{{uc.user.birthDate | date}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="text" ng-model="uc.user.birthDate"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td ng-hide="editing">{{uc.user.email}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="email" ng-model="uc.user.email"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Number:</td>
+                                    <td ng-hide="editing">{{uc.user.contactPhone}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="phone" ng-model="uc.user.contactPhone"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Zip:</td>
+                                    <td ng-hide="editing">{{uc.user.zip}}</td>
+                                    <td>
+                                        <input ng-show="editing" class="form-control no-border table-font" type="text" ng-model="uc.user.zip"></input>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td align="right"><a href="" ng-click="editing = !editing" type="button"><i class="glyphicon glyphicon-edit fa-lg"></i></a>
+                                        <a ng-click="uc.updateUser(uc.user)" ng-hide="!editing" ng-show="editing" ui-sref="profile" type="button"><i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- close user profile column -->
+        <div name="MyRooms" class="col-xs-12">
+            <h2 class="padding-buffer GetawayTitle"> My Hosted Rooms</h2>
+            <!-- <div class="col-xs-7"> -->
+            <div class="col-xs-8 col-sm-6 col-md-4 divider" ng-repeat="r in uc.user.rooms">
+                <div class="thumbnail shadow thumbnail-height">
+                    <img class="img-container"ng-src="{{r.pictureUrl}}">
+                    <div class="caption">
+                        <h4>{{r.roomName}}</h4>
+                        <p class="main-text">{{r.description}}</p>
+                        <div ng-show="update" class="form-group">
+                            <div class="padding-buffer">
+                                <label><i class="fa fa-home" aria-hidden="true"></i> Address
+                                    <input class="form-control" ng-model="r.address" />
+                                </label>
+                                <label> State:
+                                    <input class="form-control" ng-model="r.state" />
+                                </label>
+                                <label> Zip:
+                                    <input class="form-control" ng-model="r.zip" />
+                                </label>
+                            </div>
+                            <div class="padding-buffer">
+                                <label><i class="fa fa-usd" aria-hidden="true"></i> Price/Night
+                                    <input class="form-control" ng-model="r.price" />
+                                </label>
+                                <label> #Rooms
+                                    <input class="form-control" type="number" ng-model="r.roomNumber" />
+                                </label>
+                                <label> Guest Limit
+                                    <input class="form-control" type="number" ng-model="r.guestLimit" />
+                                </label>
+                                <div class="form-check">
+                                    <label class="form-check-label"> Private
+                                        <input class="form-check-input" type="checkbox" ng-model="r.private">
+                                    </label>
+                                </div>
+                            </div>
+                            <textarea class="form-control" rows="10" ng-model="r.description"> </textarea>
+                            <div class="">
+                                <button class="btn btn-color" ng-click="uc.pickFile()"><i class="fa fa-camera-retro" aria-hidden="true"></i> Room Pic</button>
+                            </div>
+                        </div>
+                        <a href="" ng-click="update = !update"> <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i> </a>
+                        <a href="" ng-show="update" ng-click="update = !update; uc.updateRoom(r)"> <i class="fa fa-floppy-o fa-lg padding-right" aria-hidden="true"></i> </a>
+                        <a href="" ng-show="update" ng-click="uc.deleteRoom(r.roomId)"> <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- close My Room -->
+        <div class="padding-buffer margin-left">
+            <a href="" ui-sref="createRoom"><h3>Add New Room</h3></a>
+        </div>
+        <!-- close add room -->
+    </div>
+    <!-- close container -->

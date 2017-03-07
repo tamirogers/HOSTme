@@ -1,0 +1,47 @@
+<div class="container">
+<h2 class="text-center">Register with HostMe</h2>
+
+<hr>
+
+  <div class="row">
+  <div class="col-md-4 col-md-offset-3">
+    <label class="form-group"><i class="fa fa-user" aria-hidden="true"></i> First Name
+      <input class="form-control" type="text" ng-model="uc.fname">
+    </label>
+    <label class="form-group">Last Name
+      <input class="form-control" type="text" ng-model="uc.lname">
+    </label>
+    <label class="form-group">Username
+      <input class="form-control" type="text" ng-model="uc.uname">
+    </label>
+    <label class="form-group"><i class="fa fa-envelope" aria-hidden="true"></i> Email
+      <input class="form-control" type="email" ng-model="uc.email">
+    </label>
+    <label class="form-group"><i class="fa fa-mobile" aria-hidden="true"></i> Phone Number
+      <input class="form-control" type="text" ng-model="uc.phone">
+    </label>
+    <div>
+      <button class="btn btn-color" ng-click="uc.pickFile()"><i class="fa fa-camera-retro" aria-hidden="true"></i> Profile Pic</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+    <label class="form-group"><i class="fa fa-map-marker" aria-hidden="true"></i> Zip Code
+      <input class="form-control" type="text" ng-model="uc.zip">
+    </label>
+    <label class="form-group"><i class="fa fa-child" aria-hidden="true"></i> Birthdate
+      <input class="form-control" type="date" ng-model="uc.bday">
+    </label>
+    <label class="form-group"><i class="fa fa-key" aria-hidden="true"></i> Password
+      <input class="form-control" type="password" ng-model="uc.password">
+    </label>
+    <label class="form-group"><i class="fa fa-check" aria-hidden="true"></i> Confirm Password
+      <input class="form-control" type="password" ng-model="uc.confirm">
+    </label>
+  <div>
+    <button class="btn btn-color" ng-click="uc.addUser()">Register</button>
+  </div>
+
+  </div>
+</div>

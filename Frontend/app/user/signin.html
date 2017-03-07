@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row col-md-4 col-md-offset-4">
+    	<h3 class="text-center GetawayTitle">Login or <a ui-sref="register">Sign up</a></h3>
+        <div class="signin-icon"><i class="fa fa-user-circle-o fa-5x center-block" aria-hidden="true"></i></div>
+		<div class="form-group">
+    	    <div class="">
+		        <a fb-login class="btn btn-block btn-primary">
+			        <i class="fa fa-facebook" aria-hidden="true"> Sign in with Facebook</i>
+		        </a>
+	        </div>
+
+		</div>
+
+		<div class="text-center divider">
+      <p class="text-muted">or</p>
+      <hr>
+    </div>
+
+		<div class="">
+			<div class="form-group">
+					<div class="input-group">
+            <span class="input-group-addon" aria-hidden="true"><i class="fa fa-user-circle"></i></span>
+						<input type="text" class="form-control" ng-model="uc.email" placeholder="Email Address">
+					</div>
+
+					<div class="input-group">
+            <span id="basaic-addon1" class="input-group-addon" aria-hidden="true"><i class="fa fa-key"></i></span>
+						<input  type="password" class="form-control" ng-model="uc.password" name="password" placeholder="Password">
+					</div>
+
+          <div class="form-group divider">
+					<button class="btn btn-block btn-color" ng-click="uc.getUser()">Login</button>
+        </div>
+				</form>
+			</div>
+    	</div>
+
+	</div>
+</div>

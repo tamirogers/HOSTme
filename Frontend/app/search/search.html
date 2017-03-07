@@ -1,0 +1,63 @@
+<div class="container">
+<div class="sliderBox">
+
+<!-- <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/"> -->
+  <div id="slider">
+    <figure>
+      <img class="img-rounded" src="http://i.imgur.com/ikMiW4M.jpg" alt>
+      <img class="img-rounded" src="http://i.imgur.com/ZNWOIj2.jpg" alt>
+      <img class="img-rounded" src="http://i.imgur.com/f4Wu3Vx.jpg" alt>
+      <img class="img-rounded" src="http://i.imgur.com/Faw1HkO.png" alt>
+      <img class="img-rounded" src="http://i.imgur.com/gS6teBU.jpg" alt>
+    </figure>
+  </div>
+</div>
+
+<div class="containerRight ">
+  <img ng-src="http://i.imgur.com/ftfillW.jpg">
+</div>
+</div>
+
+<div class="container">
+<h4 class="GetawayTitle"> Search for Your Getaway and Personal Guide...</h4>
+<div class="backImg" ng-style="sc.SearchImage"></div>
+<!-- <div class="container"></div> -->
+
+<div class="form-inline">
+    <input class="form-control" ng-model="sc.City" type="text" placeholder="City"></input>
+
+  <!--   Function in SearchController, RoomFactory -->
+    <button ng-click="sc.getRooms(); advanced = false; $ctrl.scrollTo('target')" type="button" class="btn btn-color"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+    <a href="#" ng-click="advanced = !advanced">Advanced Search</a>
+</div>
+
+<div class="form-inline" ng-show="advanced">
+  <input class="form-control" type="text" placeholder="Zip Code" ng-model="sc.Zip">
+  <input class="form-control" type="number" placeholder="Max Price" ng-model="sc.MaxPrice">
+  <input class="form-control" type="number" placeholder="Guest Limit" ng-model="sc.GuestLimit">
+  <input class="form-control" type="text" placeholder="Keyword(s)" ng-model="sc.Keyword">
+  <div class="form-check">
+    <label class="form-check-label">Private
+    <input class="form-check-input" type="checkbox" placeholder="Private" ng-model="sc.Private"></label>
+  </div>
+</div>
+
+
+<!-- </div> -->
+<!-- <div class="container divider"> -->
+  <div class="row">
+  <div id="target" ng-repeat='room in sc.ReturnRoom'>
+          <div class="col-sm-6 col-md-4 divider">
+              <div class="thumbnail shadow" href="#">
+                  <img class="search-pic" ng-src="{{room.pictureUrl}}">
+                  <div class="caption">
+                      <h4>{{ room.roomName }} </h4>
+                      <p>${{ room.price }}</p>
+                       <a class="btn btn-color" role="button" ng-click="sc.storeRoomId(room.roomId)">More Details</a>
+                       <a class="btn btn-color" ng-click="sc.addFavorite(room.roomId)"><i class="fa fa-star" aria-hidden="true"></i> Add to Favorites</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

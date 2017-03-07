@@ -1,0 +1,54 @@
+<div class="container">
+<h2 class="text-center">Become a Host</h2>
+
+<hr>
+
+  <div class="row">
+  <div class="col-md-4 col-md-offset-3">
+    <label class="form-group">Room Name:
+      <input class="form-control" type="text" ng-model="rc.rName">
+    </label>
+
+    <label class="form-group">Address:
+      <input class="form-control" type="text" ng-model="rc.address">
+    </label>
+    <label class="form-group">City:
+      <input class="form-control" type="text" ng-model="rc.city">
+    </label>
+    <label class="form-group">State:
+      <input class="form-control" type="textarea" ng-model="rc.state">
+    </label>
+    <label class="form-group">Zip Code:
+      <input class="form-control" type="text" ng-model="rc.zip">
+    </label>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+    <label class="form-group"><i class="fa fa-usd" aria-hidden="true"></i> Price:
+      <input class="form-control" type="number" ng-model="rc.price">
+    </label>
+    <label class="form-group">Guest #
+      <input class="form-control" type="number" ng-model="rc.guest">
+    </label>
+    <label class="form-group"> Number of Rooms:
+      <input class="form-control" type="number" ng-model="rc.roomNumber">
+    </label>
+    <div class="form-check">
+      <label class="form-check-label"> Private
+        <input class="form-check-input" type="checkbox" ng-model="rc.private">
+      </label>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-color" ng-click="rc.pickFile()"><i class="fa fa-camera-retro" aria-hidden="true"></i> Room Picture</button>
+    </div>
+  <div class="form-group">
+    <button class="btn btn-color" ng-click="rc.addRoom()"><i class="fa fa-check" aria-hidden="true"></i> Add Room</button>
+  </div>
+  </div>
+  <div class="form-group col-md-6 col-md-offset-3">
+    <label> Description</label>
+      <textarea class="form-control" rows="6" ng-model="rc.description"></textarea>
+  </div>
+</div>
